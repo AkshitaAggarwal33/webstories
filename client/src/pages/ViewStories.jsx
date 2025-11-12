@@ -36,11 +36,11 @@ export default function ViewStories() {
     if (!window.confirm("Are you sure you want to delete this story?")) return;
     try {
       await API.delete(`/stories/${id}`);
-      alert("🗑️ Story deleted successfully!");
+      alert("Story deleted successfully!");
       setStories((prev) => prev.filter((s) => s._id !== id));
     } catch (err) {
       console.error("Error deleting story:", err);
-      alert("❌ Failed to delete story.");
+      alert("Failed to delete story.");
     }
   };
 
